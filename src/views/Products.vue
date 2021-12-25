@@ -45,7 +45,10 @@
         </a-form-item>
 
         <a-form-item label="Satuan" name="satuan">
-          <a-input v-model:value="formState.um" />
+          <a-select ref="select" v-model:value="formState.um">
+            <a-select-option value="KG">KG</a-select-option>
+            <a-select-option value="PCS">PCS</a-select-option>
+          </a-select>
         </a-form-item>
 
         <a-form-item label="Stok" name="stok">
