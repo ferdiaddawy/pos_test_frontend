@@ -90,7 +90,7 @@
                 <a-table :dataSource="tmpFormDetail" :columns="columns">
                   <template #bodyCell="{ column, index, record }">
                     <template v-if="column.key === 'product'">
-                      {{getProductName(record.product)}}
+                      {{ getProductName(record.product) }}
                     </template>
                     <template v-if="column.key === 'action'">
                       <a-button
@@ -309,6 +309,8 @@ const getSubstoal = () => {
       formHeader.total_pay =
         formHeader.total_amount - formHeader.total_discount;
     }
+  } else {
+    formHeader.total_pay = formHeader.total_amount;
   }
 };
 
@@ -341,8 +343,8 @@ const resetTransaction = () => {
 };
 
 const getProductName = (value) => {
-    return listProducts.value.find((data) => data.id == value).desc;
-}
+  return listProducts.value.find((data) => data.id == value).desc;
+};
 
 getProducts();
 getCustomers();
